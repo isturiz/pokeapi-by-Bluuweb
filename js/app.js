@@ -22,6 +22,7 @@ const fetchData = async (id) => {
       img: data.sprites.front_default,
       name: data.name,
       id: data.id,
+      type: data.types[0].type.name,
       attack: data.stats[1].base_stat,
       defense: data.stats[2].base_stat,
       speed: data.stats[5].base_stat
@@ -44,6 +45,8 @@ const drawnCard = (pokemon) => {
 
   clone.querySelector('.card-body-img').setAttribute('src', pokemon.img)
   clone.querySelector('.card-body-title').innerHTML = `${pokemon.name} <span>N.º${pokemon.id}</span>`
+  clone.querySelector('.card-body-text').innerHTML = `${pokemon.type}`
+
   clone.querySelectorAll('.card-footer h3')[0].innerHTML = `${pokemon.attack}`
   clone.querySelectorAll('.card-footer h3')[1].innerHTML = `${pokemon.defense}`
   clone.querySelectorAll('.card-footer h3')[2].innerHTML = `${pokemon.speed}`
