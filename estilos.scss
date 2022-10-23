@@ -59,6 +59,7 @@ body {
         &-title {
             margin-top: 2rem;
             font-size: 1.8rem;
+            text-transform: capitalize;
 
             span {
                 color: var(--dark-gray);
